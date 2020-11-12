@@ -1,0 +1,9 @@
+name: "ServerManagement"
+version: 1.0-SNAPSHOT
+main: com.github.moole100.management.ServerManagementPlugin
+api-version: "1.13"
+authors: [moole100, PatrickKR]
+description: Server Management Plugin
+load: STARTUP
+prefix: SM
+depend: [Kotlin]
