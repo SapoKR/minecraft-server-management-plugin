@@ -1,8 +1,12 @@
-#Server management plugin
+Server management plugin
+========================
+
 =========================
 
-##**Preview**
--------------
+**Preview**
+-----------
+
+---
 
 > intsall a **[IntelliJ IDEA](https://www.jetbrains.com/ko-kr/idea/)** ![이미지1](https://cdn.discordapp.com/attachments/699182482985058314/776351071063769088/unknown.png)
 >
