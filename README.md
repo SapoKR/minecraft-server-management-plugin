@@ -1,7 +1,4 @@
 Server management plugin
-========================
-
-=========================
 
 **Preview**
 -----------
@@ -22,7 +19,7 @@ Server management plugin
 >
 > click Gradle icon. ![이미지1](https://media.discordapp.net/attachments/699182482985058314/776362363984543794/unknown.png?width=1239&height=697)
 >
-> Type gradle clean distJar and Press Enter. ![이미지1](https://media.discordapp.net/attachments/699182482985058314/776361620627783690/unknown.png?width=1239&height=697)
+> Type gradle clean shadowJar and Press Enter. ![이미지1](https://media.discordapp.net/attachments/699182482985058314/778595430023823360/unknown.png)
 >
 > wait a few minutes and you open it **Unzipped folder**\build\libs
 >

@@ -5,7 +5,6 @@ import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
-import org.bukkit.event.entity.EntitySpawnEvent
 import org.bukkit.event.entity.PlayerDeathEvent
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerQuitEvent
@@ -25,14 +24,6 @@ class Eventmanage : Listener{
         event.playerSample.clear()
     }
     @EventHandler
-    fun onRespawn(event: PlayerRespawnEvent) {
-        try {
-            event.player.teleport(event.player.bedLocation)
-        } catch (e : IllegalStateException) {
-            event.player.teleport(event.player.world.spawnLocation)
-        }
-    }
-    @EventHandler
     fun onQuit(event:PlayerQuitEvent){
         event.quitMessage = "${ChatColor.YELLOW}Bye Bye. ${event.player.name} See you again soon."
     }
@@ -42,7 +33,7 @@ class Eventmanage : Listener{
     }
     @EventHandler
     fun onJoin(event:PlayerJoinEvent){
-        event.joinMessage = "${ChatColor.YELLOW}Welcome to the ${Bukkit.getServer().name}."
+        event.joinMessage = "${net.md_5.bungee.api.ChatColor.of(Color(Random.nextInt(0x92ddc8)))}${net.md_5.bungee.api.ChatColor.BOLD}Welcome to the ${Bukkit.getServer().name}"
     }
 
 }

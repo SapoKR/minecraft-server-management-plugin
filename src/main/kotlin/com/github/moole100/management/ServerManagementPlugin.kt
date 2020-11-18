@@ -11,6 +11,8 @@ import io.ktor.websocket.webSocket
 import org.bukkit.Bukkit
 import org.bukkit.Bukkit.getPluginManager
 import org.bukkit.ChatColor
+import org.bukkit.command.Command
+import org.bukkit.command.CommandSender
 import org.bukkit.plugin.java.JavaPlugin
 
 @Suppress("unused")
@@ -46,21 +48,21 @@ class ServerManagementPlugin : JavaPlugin() {
     override fun onDisable() {
         logger.info("Disable Server Management.")
     }
+    override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
+        return true
+    }
 }
 class Restarter: Runnable {
     private val time = System.currentTimeMillis()
-
     override fun run() {
         val elapsedTime = System.currentTimeMillis() - time
-
         val restartTime = 1000L * 60L * 60L * 2L
-
         if (elapsedTime >= restartTime) {
             for (player in Bukkit.getOnlinePlayers()) {
                 player.sendMessage("${ChatColor.GOLD}Server restarting...")
             }
             Bukkit.shutdown()
-        } else if (elapsedTime >= restartTime - 60000L) {
+        } else if (elapsedTime == restartTime - 60000L) {
             Bukkit.broadcastMessage("${ChatColor.GOLD}약 1분 뒤 서버가 재시작됩니다.")
         }
     }
